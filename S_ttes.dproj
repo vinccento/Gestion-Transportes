@@ -1,0 +1,179 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{24A7A680-AA76-4401-8DC8-A7844D33EB5C}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>S_ttes.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ExeOutput>..\EJECUTABLE\</DCC_ExeOutput>
+			<DCC_UsePackage>vclx;vcl;vclimg;dbrtl;Rave77VCL;bdertl;rtl;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapServer;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;dacvcl140;dac140;crcontrols140;mydacvcl140;mydac140;mysqlmon140;dclOfficeXP;dclExcelExportPack14</DCC_UsePackage>
+			<BRCC_OutputDir>..\EJECUTABLE\</BRCC_OutputDir>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>..\EJECUTABLE\S_ttes.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_ExeOutput>..\EJECUTABLE\</DCC_ExeOutput>
+			<DCC_DcuOutput>..\EJECUTABLE\</DCC_DcuOutput>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="S_ttes.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="uprincipal.pas">
+				<Form>f_principal</Form>
+			</DCCReference>
+			<DCCReference Include="conexiones.pas">
+				<Form>conesiones</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="clientes.pas">
+				<Form>f_clientes</Form>
+			</DCCReference>
+			<DCCReference Include="localidades.pas">
+				<Form>flocalidades</Form>
+			</DCCReference>
+			<DCCReference Include="declaraciones.pas"/>
+			<DCCReference Include="ualbaranes.pas">
+				<Form>f_albaranes</Form>
+			</DCCReference>
+			<DCCReference Include="uadr.pas">
+				<Form>f_adr</Form>
+			</DCCReference>
+			<DCCReference Include="U_INFORMES.pas">
+				<Form>INFORMES</Form>
+			</DCCReference>
+			<DCCReference Include="u_parametros_informes.pas">
+				<Form>parametros_informes</Form>
+			</DCCReference>
+			<DCCReference Include="UNT_TTAS1.pas">
+				<Form>INT_TTAS1</Form>
+			</DCCReference>
+			<DCCReference Include="UNT_TTAS.pas">
+				<Form>INT_TTAS</Form>
+			</DCCReference>
+			<DCCReference Include="UPICKING.pas">
+				<Form>tpiking</Form>
+			</DCCReference>
+			<DCCReference Include="enviocorreo.pas">
+				<Form>f_envio</Form>
+			</DCCReference>
+			<DCCReference Include="almacen.pas">
+				<Form>f_almacen</Form>
+			</DCCReference>
+			<DCCReference Include="ubusca.pas">
+				<Form>f_busca</Form>
+			</DCCReference>
+			<DCCReference Include="ubuscaalmacen.pas">
+				<Form>f_busca_almacenaje</Form>
+			</DCCReference>
+			<DCCReference Include="u_parametros_almacen.pas">
+				<Form>f_parametros_almacen</Form>
+			</DCCReference>
+			<DCCReference Include="TARIFA_PROV.pas">
+				<Form>TARIFAS</Form>
+			</DCCReference>
+			<DCCReference Include="IMPORTAR.pas">
+				<Form>F1</Form>
+			</DCCReference>
+			<DCCReference Include="u_baremos_tarifa.pas">
+				<Form>BAREMOS_PROV</Form>
+			</DCCReference>
+			<DCCReference Include="FUNCIONES.PAS"/>
+			<DCCReference Include="scExcelExport.pas"/>
+			<DCCReference Include="USEGUIMIENTO.pas">
+				<Form>f_seguimiento</Form>
+			</DCCReference>
+			<DCCReference Include="u_repso.pas">
+				<Form>f_repaso</Form>
+			</DCCReference>
+			<DCCReference Include="U_elige.pas">
+				<Form>elige_directorio</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">3082</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">S_ttes.dpr</Source>
+					</Source>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\7.0\Bpl\ExcelExportPack14.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
